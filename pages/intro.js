@@ -1,13 +1,9 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Inter } from "@next/font/google";
 import styles from "../styles/Intro.module.css";
-const inter = Inter({ subsets: ["latin"] });
 
-const Intro = () => {
-  const [score, setScore] = useState(100);
-  const [budget, setBuget] = useState(500);
+const Play = () => {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -28,11 +24,11 @@ const Intro = () => {
       <div className={styles.points}>
         <p>
           <span className="text-xs font-light text-gray-100">Score: </span>
-          {score} 🔥
+          100 🔥
         </p>
         <p>
           <span className="text-xs font-light text-gray-100">Budget: </span>
-          {budget} 🪙
+          500 🪙
         </p>
       </div>
       <div className="flex justify-center">
@@ -47,9 +43,9 @@ const Intro = () => {
             </p>
           </div>
           <div className="flex justify-center pt-8">
-            <button className={styles.button}>
+            <Link className={styles.button} href="/play">
               <p>NEXT</p>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -57,4 +53,4 @@ const Intro = () => {
   );
 };
 
-export default Intro;
+export default Play;

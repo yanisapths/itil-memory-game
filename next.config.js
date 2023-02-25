@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['scontent.fbkk29-7.fna.fbcdn.net'],
+    domains: ['scontent.fbkk29-7.fna.fbcdn.net','img.my-best.in.th'],
   },
 }
 

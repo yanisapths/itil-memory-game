@@ -1,0 +1,7 @@
+.img {
+  border-radius: 250px;
+  width: 250px;
+  height: 250px;
+  background-image: url("https://img.my-best.in.th/content_section/choice_component/contents/15071885013dc500f9ee3e68e709a8a1.jpg?ixlib=rails-4.2.0&q=70&lossless=0&w=690&fit=max&s=277182ca19283ab171f7e5ade54d29d0");
+  background-size: cover;
+}
