@@ -32,7 +32,7 @@ export default function Home() {
         </div>
         <div className={styles.grid}>
           <Link
-            href="/play"
+            href="/intro"
             className={styles.card}
           >
             <h2 className={inter.className}>
