@@ -10,7 +10,7 @@ export class Place extends Component {
   render() {
     const { handleChange, score, budget } = this.props;
     return (
-      <main className="min-h-[100vh]">
+      <main className={game.main}>
         <div className={styles.points}>
           <p>
             <span className="text-xs font-light text-gray-100">Score: </span>
@@ -21,25 +21,40 @@ export class Place extends Component {
             {budget} 🪙
           </p>
         </div>
-        <div className="flex justify-center items-center align-middle pt-12">
-          <div>
-            <div className="flex justify-between gap-10 pt-10">
-              <div className="w-1/3">
-                <div className={game.img}></div>
-              </div>
-              <div className="w-1/3">
-                <div className={game.img}></div>
-              </div>
-              <div className="w-1/3">
-                <div className={game.img}></div>
-              </div>
-            </div>
-            <div className="flex justify-center pt-12">
-              <button className={styles.button} onClick={this.continue}>
-                <p>NEXT</p>
-              </button>
+        <div className="flex justify-center -mt-48 items-center align-middle">
+          <div className={game.content}>
+            <div className={game.circle}>
+              <h2>Chaing Dao</h2>
+              <h3>Great Outdoors</h3>
+              <div className={game.chiangdaoImg} />
             </div>
           </div>
+          <div className={game.content}>
+            <div className={game.circle}>
+              <h2>Mon Jam</h2>
+              <h3>Chilling in the wind</h3>
+              <div className={game.monjamImg} />
+            </div>
+          </div>
+          <div className={game.content}>
+            <div className={game.circle}>
+              <h2>Doi Pui</h2>
+              <h3>Explore nature with me</h3>
+              <div className={game.doipuiImg} />
+            </div>
+          </div>
+          <div className={game.content}>
+            <div className={game.circle}>
+              <h2>Doi Inthanon</h2>
+              <h3>Challenge in extreme forest</h3>
+              <div className={game.doiinImg} />
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-center -mt-12">
+          <button className={styles.button} onClick={this.continue}>
+            <p>NEXT</p>
+          </button>
         </div>
       </main>
     );
