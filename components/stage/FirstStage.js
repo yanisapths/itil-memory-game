@@ -4,6 +4,7 @@ import Place from "./Place";
 export class FirstStage extends Component {
   state = {
     step: 1,
+    place: ""
   };
 
   nextStep = () => {
@@ -26,9 +27,9 @@ export class FirstStage extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
   };
-
   render() {
-    const { step, success } = this.state;
+    const { step,place } = this.state;
+    const values = {place}
     const { score, budget } = this.props;
     switch (step) {
       case 1:
@@ -36,6 +37,7 @@ export class FirstStage extends Component {
           <Place
           nextStep={this.nextStep}
           handleChange={this.handleChange}
+          values={values}
           score={score}
           budget={budget}
         />
