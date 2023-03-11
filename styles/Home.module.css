@@ -53,7 +53,7 @@
   grid-template-columns: repeat(1, minmax(25%, auto));
 }
 
-.card {
+.btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,17 +67,17 @@
   cursor: pointer;
 }
 
-.card span {
+.btn span {
   display: inline-block;
   transition: transform 200ms;
 }
 
-.card h2 {
+.btn h2 {
   font-weight: 600;
   margin-bottom: 0.4rem;
 }
 
-.card p {
+.btn p {
   margin: 0;
   opacity: 0.6;
   font-size: 0.9rem;
@@ -128,15 +128,15 @@
   position: relative;
 }
 
-.card::before,
-.card::after {
+.btn::before,
+.btn::after {
   content: "";
   position: absolute;
   z-index: -1;
 }
 
 /* Conic Gradient Animation */
-.card::before {
+.btn::before {
   animation: 6s rotate linear infinite;
   width: 200%;
   height: 200%;
@@ -144,7 +144,7 @@
 }
 
 /* Inner Square */
-.card::after {
+.btn::after {
   inset: 0;
   padding: 1px;
   border-radius: 48px;
@@ -158,22 +158,22 @@
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
-  .card:hover {
+  .btn:hover {
     background: rgba(var(--card-rgb), 0.1);
     border: 1px solid rgba(var(--card-border-rgb), 0.15);
     box-shadow: 0px 8px 8px -1px #0000001a;
   }
-  .card:hover span {
+  .btn:hover span {
     transform: translateX(4px);
   }
 }
 
 @media (prefers-reduced-motion) {
-  .card::before {
+  .btn::before {
     animation: none;
   }
 
-  .card:hover span {
+  .btn:hover span {
     transform: none;
   }
 }
@@ -191,11 +191,11 @@
     text-align: center;
   }
 
-  .card {
+  .btn {
     padding: 1rem 2.5rem;
   }
 
-  .card h2 {
+  .btn h2 {
     margin-bottom: 0.5rem;
   }
 
