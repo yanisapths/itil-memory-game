@@ -1,9 +1,9 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import Image from "next/image";
+import Link from "next/link";
+import { Inter } from "@next/font/google";
+import styles from "../styles/Home.module.css";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -11,9 +11,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.description}>
           <div>
-            <Link
-              href="/"
-            >
+            <Link href="/">
               By
               <Image
                 src="/canicode.svg"
@@ -28,13 +26,10 @@ export default function Home() {
         </div>
 
         <div className={styles.center}>
-          <p className={styles.logo}>CAMPING ACHIEVER</p>
+          <p className={styles.logo}>REMEMBER TO SURVIVE ⚡</p>
         </div>
         <div className={styles.grid}>
-          <Link
-            href="/intro"
-            className={styles.card}
-          >
+          <Link href="/intro" className={styles.btn}>
             <h2 className={inter.className}>
               PLAY NOW <span>-&gt;</span>
             </h2>
@@ -42,5 +37,5 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
+  );
 }
