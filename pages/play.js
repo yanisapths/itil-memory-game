@@ -31,7 +31,7 @@ function Play() {
                 <img src="/images/que_icon.svg" alt="icon" />
               </div>
               <div className="view back-view">
-                <img src="/images/img-1.png" alt="card-img" name="1" />
+                <img src="/images/questions/q1.png" alt="card-img" name="1" />
               </div>
             </li>
             <li className="card">
@@ -39,7 +39,7 @@ function Play() {
                 <img src="/images/que_icon.svg" alt="icon" />
               </div>
               <div className="view back-view">
-                <img src="/images/img-2.png" alt="card-img" name="2" />
+                <img src="/images/questions/q2.png" alt="card-img" name="2" />
               </div>
             </li>
             <li className="card">
@@ -47,7 +47,7 @@ function Play() {
                 <img src="/images/que_icon.svg" alt="icon" />
               </div>
               <div className="view back-view">
-                <img src="/images/img-3.png" alt="card-img" name="3" />
+                <img src="/images/questions/q3.png" alt="card-img" name="3" />
               </div>
             </li>
             <li className="card">
@@ -55,7 +55,7 @@ function Play() {
                 <img src="/images/que_icon.svg" alt="icon" />
               </div>
               <div className="view back-view">
-                <img src="/images/img-4.png" alt="card-img" name="4" />
+                <img src="/images/questions/q4.png" alt="card-img" name="4" />
               </div>
             </li>
             <li className="card">
@@ -63,7 +63,7 @@ function Play() {
                 <img src="/images/que_icon.svg" alt="icon" />
               </div>
               <div className="view back-view">
-                <img src="/images/img-5.png" alt="card-img" name="5" />
+                <img src="/images/questions/q5.png" alt="card-img" name="5" />
               </div>
             </li>
             <li className="card">
@@ -71,7 +71,7 @@ function Play() {
                 <img src="/images/que_icon.svg" alt="icon" />
               </div>
               <div className="view back-view">
-                <img src="/images/img-1.png" alt="card-img" name="1" />
+                <img src="/images/answers/a1.png" alt="card-img" name="1" />
               </div>
             </li>
             <li className="card">
@@ -79,7 +79,7 @@ function Play() {
                 <img src="/images/que_icon.svg" alt="icon" />
               </div>
               <div className="view back-view">
-                <img src="/images/img-2.png" alt="card-img" name="2" />
+                <img src="/images/answers/a2.png" alt="card-img" name="2" />
               </div>
             </li>
             <li className="card">
@@ -87,7 +87,7 @@ function Play() {
                 <img src="/images/que_icon.svg" alt="icon" />
               </div>
               <div className="view back-view">
-                <img src="/images/img-3.png" alt="card-img" name="3" />
+                <img src="/images/answers/a3.png" alt="card-img" name="3" />
               </div>
             </li>
             <li className="card">
@@ -95,7 +95,7 @@ function Play() {
                 <img src="/images/que_icon.svg" alt="icon" />
               </div>
               <div className="view back-view">
-                <img src="/images/img-4.png" alt="card-img" name="4" />
+                <img src="/images/answers/a4.png" alt="card-img" name="4" />
               </div>
             </li>
             <li className="card">
@@ -103,7 +103,7 @@ function Play() {
                 <img src="/images/que_icon.svg" alt="icon" />
               </div>
               <div className="view back-view">
-                <img src="/images/img-5.png" alt="card-img" name="5" />
+                <img src="/images/answers/a5.png" alt="card-img" name="5" />
               </div>
             </li>
 
