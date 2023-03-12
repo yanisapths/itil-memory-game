@@ -87,7 +87,7 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
-
+/* 
 body {
   color: rbg(--foreground-rgb);
   background: linear-gradient(
@@ -96,7 +96,16 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
+
 
 a {
   color: inherit;
@@ -111,9 +120,7 @@ a {
 p{
   font-size: 20px;
 }
-body{
 
-}
 ::selection{
   color: #fff;
   background: #6563ff;
@@ -176,20 +183,31 @@ body{
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 .card .front-view img{
-  max-width: 17px;
+  max-width: 220px;
 }
 .card .back-view{
   transform: rotateY(-180deg);
 }
-.card .back-view img{
-  max-width: 40px;
+.card .ans-view{
+  transform: rotateY(-180deg);
 }
+.card .back-view img{
+  max-width: 220px;
+}
+.card .ans-view img{
+  max-width: 220px;
+}
+
 .card.flip .front-view{
   transform: rotateY(180deg);
 }
 .card.flip .back-view{
   transform: rotateY(0);
 }
+.card.flip .ans-view{
+  transform: rotateY(0);
+}
+
 
 .details{
   width: 100%;
@@ -239,6 +257,10 @@ body{
   .card .back-view img{
     max-width: 40px;
   }
+
+  .card .ans-view img{
+    max-width: 40px;
+  }
 }
 
 @media screen and (max-width: 530px) {
@@ -266,4 +288,36 @@ body{
     color: #fff;
     background: #6563ff;
   }
+}
+
+section {
+  display: grid;
+  grid-template-rows: repeat(4, 10rem);
+  grid-template-columns: repeat(4, 10rem);
+  perspective: 800px;
+  grid-gap: 2rem;
+}
+
+.back {
+  background-color: black;
+}
+
+.face,
+.back {
+  position: absolute;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.toggleCard {
+  transform: rotateY(180deg);
 }

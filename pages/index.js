@@ -26,7 +26,7 @@ export default function Home() {
         </div>
 
         <div className={styles.center}>
-          <p className={styles.logo}>REMEMBER TO SURVIVE ⚡</p>
+          <p className={styles.logo}>JUST REMEMBER</p>
         </div>
         <div className={styles.grid}>
           <Link href="/intro" className={styles.btn}>
