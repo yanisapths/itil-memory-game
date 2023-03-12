@@ -34,13 +34,15 @@ export const script = () => {
       }
       cardTwo = clickedCard;
       disableDeck = true;
-      let cardOneImg = cardOne.querySelector(".back-view img").src,
-        cardTwoImg = cardTwo.querySelector(".back-view img").src;
-      matchCards(cardOneImg, cardTwoImg);
-    }
+      console.log(clickedCard)
+      let cardOneImg = cardOne.querySelector(".back-view img").name,
+        cardTwoImg = cardTwo.querySelector(".back-view img").name;
+        matchCards(cardOneImg, cardTwoImg);
+      }
   }
 
   function matchCards(img1, img2) {
+
     if (img1 === img2) {
       matchedCard++;
       if (matchedCard == 6 && timeLeft > 0) {
@@ -80,9 +82,9 @@ export const script = () => {
     cards.forEach((card, index) => {
       card.classList.remove("flip");
       let imgTag = card.querySelector(".back-view img");
-      setTimeout(() => {
-        imgTag.src = `images/img-${arr[index]}.png`;
-      }, 500);
+      // setTimeout(() => {
+      //   imgTag.src = `images/img-${arr[index]}.png`;
+      // }, 500);
       card.addEventListener("click", flipCard);
     });
   }
