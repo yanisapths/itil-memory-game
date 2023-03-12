@@ -4,7 +4,7 @@ export const script = () => {
     flipsTag = document.querySelector(".flips b"),
     refreshBtn = document.querySelector(".details button");
 
-  let maxTime = 20;
+  let maxTime = 60;
   let timeLeft = maxTime;
   let flips = 0;
   let matchedCard = 0;
@@ -34,15 +34,13 @@ export const script = () => {
       }
       cardTwo = clickedCard;
       disableDeck = true;
-      console.log(clickedCard)
       let cardOneImg = cardOne.querySelector(".back-view img").name,
         cardTwoImg = cardTwo.querySelector(".back-view img").name;
-        matchCards(cardOneImg, cardTwoImg);
-      }
+      matchCards(cardOneImg, cardTwoImg);
+    }
   }
 
   function matchCards(img1, img2) {
-
     if (img1 === img2) {
       matchedCard++;
       if (matchedCard == 6 && timeLeft > 0) {
@@ -76,15 +74,21 @@ export const script = () => {
     flipsTag.innerText = flips;
     disableDeck = isPlaying = false;
 
-    let arr = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6];
+    let arr = [
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1, 2, 3, 4, 5, 6,
+      7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+    ];
     arr.sort(() => (Math.random() > 0.5 ? 1 : -1));
-
     cards.forEach((card, index) => {
       card.classList.remove("flip");
       let imgTag = card.querySelector(".back-view img");
-      // setTimeout(() => {
-      //   imgTag.src = `images/img-${arr[index]}.png`;
-      // }, 500);
+      setTimeout(() => {
+        if (imgTag.id === "quest") {
+          imgTag.src = `/images/questions/q${arr[index]}.png`;
+        } else {
+          imgTag.src = `/images/answers/a${arr[index]}.png`;
+        }
+      }, 500);
       card.addEventListener("click", flipCard);
     });
   }
