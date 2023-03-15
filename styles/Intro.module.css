@@ -4,10 +4,10 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  margin: 0 80px 0 80px;
 }
 
-.center {
-  padding-top: 40px;
+.center { 
   justify-content: center;
   align-items: center;
 }
@@ -38,8 +38,8 @@
   font-size: 0.85rem;
   max-width: var(--max-width);
   z-index: 2;
-  font-family: var(--font-mono);
-  padding-top: 2rem;
+  font-family: var(--font-Ubuntu);
+  padding-top: 1rem;
   padding-left: 60px;
   gap: 10px;
 }
@@ -64,7 +64,7 @@
   justify-content: center;
   align-items: center;
   width: fit-content;
-  padding: 8rem 6rem ;
+  padding: 2rem ;
   border-radius: 10px;
   border: 1px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
@@ -85,7 +85,7 @@
   text-align: center;
   font-weight: 800;
   margin-bottom: 0.8rem;
-  font-size: 3rem;
+  font-size: 35px;
   font-family: var(--font-mono);
 }
 
@@ -93,7 +93,7 @@
   text-align: center;
   font-weight: 200;
   margin-bottom: 0.2rem;
-  font-size: 1.75rem;
+  font-size: 15px;
   font-family: var(--font-mono);
 }
 .card h3 {
@@ -110,6 +110,8 @@
   line-height: 1.5;
   max-width: 60ch;
   margin-bottom: 0.2rem;
+  font-family: var(--font-mono);
+  
 }
 
 .button {
