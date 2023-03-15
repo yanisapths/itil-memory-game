@@ -90,7 +90,7 @@ function Play() {
             </div>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex gap-4  max-w-screen-lg px-8">
             <ul className="cards justify-center items-center gap-4 my-5 ">
               {q.map((item, index) => {
                 return (
