@@ -74,7 +74,7 @@ export const script = () => {
     timeTag.innerText = timeLeft;
     flipsTag.innerText = flips;
     disableDeck = isPlaying = false;
-
+    // Shuffle only Question Cards
     let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     arr.sort(() => (Math.random() > 0.5 ? 1 : -1));
     cards.forEach((card, index) => {
@@ -88,6 +88,7 @@ export const script = () => {
       card.addEventListener("click", flipCard);
     });
 
+    // Shuffle only Answer Cards
     let w = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     w.sort(() => (Math.random() > 0.5 ? 1 : -1));
     decks.forEach((card, index) => {
@@ -106,10 +107,11 @@ export const script = () => {
   shuffleCard();
 
   refreshBtn.addEventListener("click", shuffleCard);
-
+   // Question Cards
   cards.forEach((card) => {
     card.addEventListener("click", flipCard);
   });
+  // Answer Cards
   decks.forEach((card) => {
     card.addEventListener("click", flipCard);
   });

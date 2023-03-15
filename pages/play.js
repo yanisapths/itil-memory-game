@@ -47,79 +47,75 @@ function Play() {
   }, []);
   return (
     <main className="w-screen h-screen my-4">
-      <div className=" text-base z-2 pt-2 pl-[60px] grid grid-cols-3 gap-4 content-between ">
-        <div className=" left-20">
-        <Link href="/">
-          By
-          <Image
-            src="/canicode.svg"
-            alt="canicode Logo"
-            className={styles.vercelLogo}
-            width={60}
-            height={30}
-            priority
-          />
-        </Link>
+      <div className=" text-base z-2 pt-2 pl-[60px] grid grid-cols-3 gap-4 content-between">
+        <div>
+          <Link href="/">
+            By
+            <Image
+              src="/canicode.svg"
+              alt="canicode Logo"
+              className={styles.vercelLogo}
+              width={60}
+              height={30}
+              priority
+            />
+          </Link>
         </div>
         <div className="flex flex-col gap-5">
-        <div className="flex flex-col justify-center items-center">
-          <div className="details w-full col-start-1 text-black mb-4">
-            <p className="time">
-              Time:{" "}
-              <span>
-                <b>20</b>s
-              </span>
-            </p>
-            <p className="flips">
-              Flips:{" "}
-              <span>
-                <b>0</b>
-              </span>
-            </p>
-            <button>Refresh</button>
-          </div>
-          <div className="flex gap-5">
-            <div className="flex gap-2">
-              <p className="rounded-full bg-[#CDCEFF] w-7 h-7"></p>
-              <span className="text-white">Question</span>
+          <div className="flex flex-col justify-center items-center">
+            <div className="details w-full col-start-1 text-black mb-4">
+              <p className="time">
+                Time:{" "}
+                <span>
+                  <b>20</b>s
+                </span>
+              </p>
+              <p className="flips">
+                Flips:{" "}
+                <span>
+                  <b>0</b>
+                </span>
+              </p>
+              <button>Refresh</button>
             </div>
-            <div className="flex gap-2">
-              <p className="rounded-full bg-[#FDF9F3] w-7 h-7"></p>
-              <span className="text-white">Answers</span>
+            <div className="flex gap-5">
+              <div className="flex gap-2">
+                <p className="rounded-full bg-[#CDCEFF] w-7 h-7"></p>
+                <span className="text-white">Question</span>
+              </div>
+              <div className="flex gap-2">
+                <p className="rounded-full bg-[#FDF9F3] w-7 h-7"></p>
+                <span className="text-white">Answers</span>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>
       <div className="flex justify-center items-center">
-          <div className="flex gap-4  max-w-screen-lg px-8">
-            <ul className="cards justify-center items-center gap-4 mb-8">
-              {q.map((item, index) => {
-                return (
-                  <Card
-                    key={index}
-                    name={item.name}
-                    src={item.src}
-                    id={item.id}
-                  />
-                );
-              })}
-            </ul>
-            <ul className="decks justify-center items-center gap-4 mb-8">
-              {a.map((item, index) => {
-                return (
-                  <Ans
-                    key={index}
-                    name={item.name}
-                    src={item.src}
-                    id={item.id}
-                  />
-                );
-              })}
-            </ul>
-          </div>
+        <div className="flex gap-4 max-w-screen-lg px-8">
+          {/* cards in global.css */}
+          <ul className="cards justify-center items-center gap-4 mb-8">
+            {q.map((item, index) => {
+              return (
+                <Card
+                  key={index}
+                  name={item.name}
+                  src={item.src}
+                  id={item.id}
+                />
+              );
+            })}
+          </ul>
+          {/* decks in global.css */}
+          <ul className="decks justify-center items-center gap-4 mb-8">
+            {a.map((item, index) => {
+              return (
+                <Ans key={index} name={item.name} src={item.src} id={item.id} />
+              );
+            })}
+          </ul>
         </div>
-      
+      </div>
     </main>
   );
 }
