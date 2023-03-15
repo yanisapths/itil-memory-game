@@ -5,7 +5,7 @@ import styles from "../styles/Intro.module.css";
 
 const Play = () => {
   return (
-    <main >
+    <main className="w-screen h-screen">
       <div className={styles.description}>
         <div>
           <Link href="/">
@@ -26,13 +26,13 @@ const Play = () => {
         <div className={styles.center}>
           <div className={styles.card}>
             <h2>INSTRUCTION</h2>
-            <h4>The game starts with all the 🃏 face down and 🧑 take turns to turn over two 🃏.</h4>
-            <h4>If the two 🃏 have the answer of the ❓, </h4><h4>then the 🃏 will be opened, otherwise the 🃏 turn face down again.</h4>
-            <h3>The 🫅🏆 is the 🧑 with the most 🃏 when all the 🃏 have been taken.</h3>
+            <h4>The game starts with all the card face down and player take turns to turn over two card.</h4>
+            <h4>If the two card have the correct answer of the question, </h4><h4>then the card will be opened, otherwise the card turn face down again.</h4>
+            <h3>The <span className="text-[#E96479]">winner</span>  is the player with the most card when all the card have been taken.</h3>
           </div>
-          <div className="flex justify-center pt-8">
-            <Link className={styles.button} href="/play">
-              <p>NEXT</p>
+          <div className="flex justify-center pt-6">
+            <Link className="bg-white text-black rounded-full  py-2 w-1/5" href="/play">
+              <p className="text-lg font-semibold ">NEXT</p>
             </Link>
           </div>
         </div>
