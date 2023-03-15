@@ -4,8 +4,8 @@ import Image from "next/image";
 import styles from "../styles/Intro.module.css";
 import { script } from "../public/script/script";
 import Card from "../components/Card";
-
-const qa = [
+import Ans from "../components/Ans";
+const q = [
   { src: "/images/questions/q1.png", name: "1", id: "quest" },
   { src: "/images/questions/q2.png", name: "2", id: "quest" },
   { src: "/images/questions/q3.png", name: "3", id: "quest" },
@@ -15,6 +15,15 @@ const qa = [
   { src: "/images/questions/q7.png", name: "7", id: "quest" },
   { src: "/images/questions/q8.png", name: "8", id: "quest" },
   { src: "/images/questions/q9.png", name: "9", id: "quest" },
+  { src: "/images/questions/q10.png", name: "10", id: "quest" },
+  { src: "/images/questions/q11.png", name: "11", id: "quest" },
+  { src: "/images/questions/q12.png", name: "12", id: "quest" },
+  { src: "/images/questions/q13.png", name: "13", id: "quest" },
+  { src: "/images/questions/q14.png", name: "14", id: "quest" },
+  { src: "/images/questions/q15.png", name: "15", id: "quest" },
+  { src: "/images/questions/q16.png", name: "16", id: "quest" },
+];
+const a = [
   { src: "/images/answers/a1.png", name: "1", id: "ans" },
   { src: "/images/answers/a2.png", name: "2", id: "ans" },
   { src: "/images/answers/a3.png", name: "3", id: "ans" },
@@ -24,13 +33,6 @@ const qa = [
   { src: "/images/answers/a7.png", name: "7", id: "ans" },
   { src: "/images/answers/a8.png", name: "8", id: "ans" },
   { src: "/images/answers/a9.png", name: "9", id: "ans" },
-  { src: "/images/questions/q10.png", name: "10", id: "quest" },
-  { src: "/images/questions/q11.png", name: "11", id: "quest" },
-  { src: "/images/questions/q12.png", name: "12", id: "quest" },
-  { src: "/images/questions/q13.png", name: "13", id: "quest" },
-  { src: "/images/questions/q14.png", name: "14", id: "quest" },
-  { src: "/images/questions/q15.png", name: "15", id: "quest" },
-  { src: "/images/questions/q16.png", name: "16", id: "quest" },
   { src: "/images/answers/a10.png", name: "10", id: "ans" },
   { src: "/images/answers/a11.png", name: "11", id: "ans" },
   { src: "/images/answers/a12.png", name: "12", id: "ans" },
@@ -39,7 +41,6 @@ const qa = [
   { src: "/images/answers/a15.png", name: "15", id: "ans" },
   { src: "/images/answers/a16.png", name: "16", id: "ans" },
 ];
-
 function Play() {
   useEffect(() => {
     script();
@@ -59,7 +60,7 @@ function Play() {
           />
         </Link>
       </div>
-      <div className="flex  justify-center items-center  ">
+      <div className="flex  justify-center items-center">
         <div className="flex flex-col justify-center items-center mx-10 my-5 w-screen bg-transparent rounded-lg shadow-lg shadow-[black]/40">
           <div className="flex flex-col gap-5 justify-center items-center">
             <div className="details w-full  col-start-1 text-black">
@@ -89,18 +90,32 @@ function Play() {
             </div>
           </div>
 
-          <ul className="cards justify-center items-center gap-4 my-5 ">
-            {qa.map((item, index) => {
-              return (
-                <Card
-                  key={index}
-                  name={item.name}
-                  src={item.src}
-                  id={item.id}
-                />
-              );
-            })}
-          </ul>
+          <div className="flex gap-4">
+            <ul className="cards justify-center items-center gap-4 my-5 ">
+              {q.map((item, index) => {
+                return (
+                  <Card
+                    key={index}
+                    name={item.name}
+                    src={item.src}
+                    id={item.id}
+                  />
+                );
+              })}
+            </ul>
+            <ul className="decks justify-center items-center gap-4 my-5 ">
+              {a.map((item, index) => {
+                return (
+                  <Ans
+                    key={index}
+                    name={item.name}
+                    src={item.src}
+                    id={item.id}
+                  />
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </div>
     </main>

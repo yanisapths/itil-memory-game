@@ -1,16 +1,16 @@
 import React from "react";
 
-function Card({ src, name, id }) {
+function Ans({ src, name, id }) {
   return (
-    <div className="card">
+    <div className="deck">
       <div className="view front-view">
         <img src="/images/que_icon.svg" alt="icon" />
       </div>
       <div className="view back-view">
-        <img src={src} alt="card-img" name={name} id={id} />
+        <img src={src} alt="deck-img" name={name} id={id} />
       </div>
     </div>
   );
 }
 
-export default Card;
+export default Ans;
