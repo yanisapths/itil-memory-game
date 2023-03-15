@@ -45,8 +45,8 @@ function Play() {
     script();
   }, []);
   return (
-    <main>
-      <div className={styles.description}>
+    <main className="w-screen h-screen my-4">
+      <div className="flex text-base z-2 pt-2 pl-[60px] gap-[10px]">
         <Link href="/">
           By
           <Image
@@ -59,20 +59,10 @@ function Play() {
           />
         </Link>
       </div>
-      <div className={styles.board}>
-        <div className="wrapper">
-          <ul className="cards">
-            {qa.map((item, index) => {
-              return (
-                <Card
-                  key={index}
-                  name={item.name}
-                  src={item.src}
-                  id={item.id}
-                />
-              );
-            })}
-            <div className="details text-black">
+      <div className="flex  justify-center items-center  ">
+        <div className="flex flex-col justify-center items-center mx-10 my-5 w-screen bg-transparent rounded-lg shadow-lg shadow-[black]/40">
+          <div className="flex flex-col gap-5 justify-center items-center">
+            <div className="details w-full  col-start-1 text-black">
               <p className="time">
                 Time:{" "}
                 <span>
@@ -87,6 +77,29 @@ function Play() {
               </p>
               <button>Refresh</button>
             </div>
+            <div className="flex gap-5">
+              <div className="flex gap-2 ">
+                <p className="rounded-full bg-[#CDCEFF] w-7 h-7"></p>
+                <span className="text-white">Question</span>
+              </div>
+              <div className="flex gap-2 ">
+                <p className="rounded-full bg-[#FDF9F3] w-7 h-7"></p>
+                <span className="text-white">Answers</span>
+              </div>
+            </div>
+          </div>
+
+          <ul className="cards justify-center items-center gap-4 my-5 ">
+            {qa.map((item, index) => {
+              return (
+                <Card
+                  key={index}
+                  name={item.name}
+                  src={item.src}
+                  id={item.id}
+                />
+              );
+            })}
           </ul>
         </div>
       </div>
