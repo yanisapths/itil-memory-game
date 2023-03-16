@@ -4,23 +4,58 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  --primary-glow: conic-gradient(
+    from 180deg at 50% 50%,
+    #16abff33 0deg,
+    #0885ff33 55deg,
+    #54d6ff33 120deg,
+    #0071ff33 160deg,
+    transparent 360deg
+  );
+  --secondary-glow: radial-gradient(
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+
+  --tile-start-rgb: 239, 245, 249;
+  --tile-end-rgb: 228, 232, 233;
+  --tile-border: conic-gradient(
+    #00000080,
+    #00000040,
+    #00000030,
+    #00000020,
+    #00000010,
+    #00000010,
+    #00000080
+  );
+
+  --callout-rgb: 238, 240, 241;
+  --callout-border-rgb: 172, 175, 176;
+  --card-rgb: 180, 185, 188;
+  --card-border-rgb: 131, 134, 135;
+}
+
+:root {
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 0, 0, 0;
-
-  --primary-glow: radial-gradient(rgba(255, 170, 207, 0.4), rgba(1, 65, 255, 0));;
+  --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
   --secondary-glow: linear-gradient(
     to bottom right,
     rgba(1, 65, 255, 0),
     rgba(1, 65, 255, 0),
-    rgba(254, 251, 233, 0.5)
+    rgba(1, 65, 255, 0.3)
   );
 
-  --tile-start-rgb:  2, 13, 46;
+  --tile-start-rgb: 2, 13, 46;
   --tile-end-rgb: 2, 5, 19;
   --tile-border: conic-gradient(
     #ffffff80,
@@ -34,42 +69,10 @@
 
   --callout-rgb: 20, 20, 20;
   --callout-border-rgb: 108, 108, 108;
-  --card-rgb:255, 255, 255;
+  --card-rgb: 100, 100, 100;
   --card-border-rgb: 200, 200, 200;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
 
 * {
   box-sizing: border-box;
@@ -83,15 +86,12 @@ body {
   overflow-x: hidden;
 }
 
-
-
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-
 
 a {
   color: inherit;
@@ -103,36 +103,62 @@ a {
     color-scheme: dark;
   }
 }
-p{
+p {
   font-size: 15px;
 }
 
-::selection{
+::selection {
   color: #fff;
   background: #6563ff;
 }
 
- .card, .view, .details, p{
+.card,
+.view,
+p {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.cards{
- display:grid;
- grid-template-columns:repeat(6,minmax(0,1fr));
- 
+
+.deck,
+.view,
+.details,
+p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.cards{
-  height: 1200px;
-  width: 1100px;
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.cards {
+  height: 600px;
+  width: 600px;
   flex-wrap: wrap;
- 
 }
-.card{
-  cursor:pointer;
+.decks {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.decks {
+  height: 600px;
+  width: 600px;
+  flex-wrap: wrap;
+}
+.card {
+  cursor: pointer;
   position: relative;
   transform-style: preserve-3d;
-  perspective:1000px;
+  perspective: 1000px;
+  height: calc(100% / 4 - 10px);
+  width: calc(100% / 4 - 10px);
+}
+.deck {
+  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
   height: calc(100% / 4 - 10px);
   width: calc(100% / 4 - 10px);
 }
@@ -144,27 +170,39 @@ p{
   height: calc(100% / 4 - 10px);
   width: calc(100% / 4 - 10px);
 }
-.card.shake{
+.decks deck {
+  cursor: pointer;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  height: calc(100% / 4 - 10px);
+  width: calc(100% / 4 - 10px);
+}
+.card.shake {
+  animation: shake 0.35s ease-in-out;
+}
+.deck.shake {
   animation: shake 0.35s ease-in-out;
 }
 @keyframes shake {
-  0%, 100%{
+  0%,
+  100% {
     transform: translateX(0);
   }
-  20%{
+  20% {
     transform: translateX(-13px);
   }
-  40%{
+  40% {
     transform: translateX(13px);
   }
-  60%{
+  60% {
     transform: translateX(-8px);
   }
-  80%{
+  80% {
     transform: translateX(8px);
   }
 }
-.cards .card .view{
+.cards .card .view {
   width: 100%;
   height: 100%;
   user-select: none;
@@ -174,61 +212,74 @@ p{
   border-radius: 7px;
   backface-visibility: hidden;
   transition: transform 0.25s linear;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
-.card .front-view img{
+.decks .deck .view {
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  background: #fff;
+  border-radius: 7px;
+  backface-visibility: hidden;
+  transition: transform 0.25s linear;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.card .front-view img {
   max-width: 220px;
 }
-.card .back-view{
+.card .back-view {
   transform: rotateY(-180deg);
 }
-.card .ans-view{
-  transform: rotateY(-180deg);
+.card .back-view img {
+  width: 1200px;
+  height: 140px;
 }
-.card .back-view img{
-  width:1200px;
-  height:185px;
-  
-}
-.card .ans-view img{
-  width:1200px;
-  height:185px;
-}
-
-.card.flip .front-view{
+.card.flip .front-view {
   transform: rotateY(180deg);
-  
 }
-.card.flip .back-view{
+.card.flip .back-view {
   transform: rotateY(0);
 }
-.card.flip .ans-view{
+.deck .front-view img {
+  max-width: 220px;
+}
+.deck .back-view {
+  transform: rotateY(-180deg);
+}
+.deck .back-view img {
+  width: 1200px;
+  height: 140px;
+}
+.deck.flip .front-view {
+  transform: rotateY(180deg);
+}
+.deck.flip .back-view {
   transform: rotateY(0);
 }
 
-
-.details{
- display:flex;
-  padding: 10px 20px 10px;
+.details {
+  display: flex;
+  padding: 25px 25px 25px;
   border-radius: 7px;
   background: #fff;
   height: calc(100% / 4 - 30px);
   justify-content: space-between;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
-.details p{
+.details p {
   font-size: 18px;
   height: 17px;
   padding-right: 18px;
-  
 }
-.details p span{
+.details p span {
   margin-left: 8px;
 }
-.details p b{
+.details p b {
   font-weight: 500;
 }
-.details button{
+.details button {
   cursor: pointer;
   font-size: 14px;
   color: #6563ff;
@@ -238,47 +289,60 @@ p{
   border: 2px solid #6563ff;
   transition: 0.3s ease;
 }
-.details button:hover{
+.details button:hover {
   color: #fff;
   background: #6563ff;
 }
 
 @media screen and (max-width: 700px) {
-  .cards{
+  .cards {
     height: 350px;
     width: 350px;
   }
-  .card .front-view img{
+  .decks {
+    height: 350px;
+    width: 350px;
+  }
+  .card .front-view img {
     max-width: 16px;
   }
-  .card .back-view img{
+  .card .back-view img {
     max-width: 40px;
   }
-
-  .card .ans-view img{
+  .deck .front-view img {
+    max-width: 16px;
+  }
+  .deck .back-view img {
     max-width: 40px;
   }
 }
 
 @media screen and (max-width: 530px) {
-  .cards{
+  .cards {
     height: 300px;
     width: 300px;
   }
-  .card .back-view img{
+  .decks {
+    height: 300px;
+    width: 300px;
+  }
+  .card .back-view img {
     max-width: 220px;
   }
-  .details{
+  .deck .back-view img {
+    max-width: 220px;
+  }
+  .details {
     margin-top: 10px;
     padding: 0 15px;
     height: calc(100% / 4 - 20px);
   }
-  .details p{
+  .details p {
     height: 15px;
     font-size: 17px;
     padding-right: 13px;
   }
-  .details button{
+  .details button {
     font-size: 13px;
     padding: 5px 10px;
     border: none;
@@ -308,6 +372,13 @@ section {
 }
 
 .card {
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.deck {
   transform-style: preserve-3d;
   transition: transform 1s;
   position: relative;

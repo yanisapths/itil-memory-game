@@ -2,6 +2,7 @@ export const script = () => {
   const cards = document.querySelectorAll(".card"),
     timeTag = document.querySelector(".time b"),
     flipsTag = document.querySelector(".flips b"),
+    decks = document.querySelectorAll(".deck"),
     refreshBtn = document.querySelector(".details button");
 
   let maxTime = 300;
@@ -43,7 +44,7 @@ export const script = () => {
   function matchCards(img1, img2) {
     if (img1 === img2) {
       matchedCard++;
-      if (matchedCard == 6 && timeLeft > 0) {
+      if (matchedCard == 16 && timeLeft > 0) {
         return clearInterval(timer);
       }
       cardOne.removeEventListener("click", flipCard);
@@ -73,20 +74,30 @@ export const script = () => {
     timeTag.innerText = timeLeft;
     flipsTag.innerText = flips;
     disableDeck = isPlaying = false;
-
-    let arr = [
-      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1, 2, 3, 4, 5, 6,
-      7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
-    ];
+    // Shuffle only Question Cards
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     arr.sort(() => (Math.random() > 0.5 ? 1 : -1));
     cards.forEach((card, index) => {
       card.classList.remove("flip");
       let imgTag = card.querySelector(".back-view img");
       setTimeout(() => {
-        if (imgTag.id === "quest") {
-          imgTag.src = `/images/questions/q${arr[index]}.png`;
-        } else {
-          imgTag.src = `/images/answers/a${arr[index]}.png`;
+        imgTag.src = `/images/questions/q${arr[index]}.png`;
+
+        imgTag.name = arr[index];
+      }, 500);
+      card.addEventListener("click", flipCard);
+    });
+
+    // Shuffle only Answer Cards
+    let w = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+    w.sort(() => (Math.random() > 0.5 ? 1 : -1));
+    decks.forEach((card, index) => {
+      card.classList.remove("flip");
+      let imgTag = card.querySelector(".back-view img");
+      setTimeout(() => {
+        if (imgTag.id == "ans") {
+          imgTag.src = `/images/answers/a${w[index]}.png`;
+          imgTag.name = w[index];
         }
       }, 500);
       card.addEventListener("click", flipCard);
@@ -96,8 +107,12 @@ export const script = () => {
   shuffleCard();
 
   refreshBtn.addEventListener("click", shuffleCard);
-
+   // Question Cards
   cards.forEach((card) => {
+    card.addEventListener("click", flipCard);
+  });
+  // Answer Cards
+  decks.forEach((card) => {
     card.addEventListener("click", flipCard);
   });
 };
