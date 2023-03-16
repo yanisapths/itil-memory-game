@@ -12,7 +12,6 @@
   align-items: center;
 }
 
-
 .points {
   display: flex;
   font-size: 0.85rem;
@@ -87,6 +86,7 @@
   margin-bottom: 0.8rem;
   font-size: 35px;
   font-family: var(--font-mono);
+  color: white;
 }
 
 .card h4,.card h3 {
@@ -95,6 +95,7 @@
   margin-bottom: 0.2rem;
   font-size: 15px;
   font-family: var(--font-mono);
+  color: whitesmoke;
 }
 .card h3 {
   margin-top: 50px;
@@ -178,6 +179,9 @@
   }
 }
 
+.vercelLogo{
+  filter: invert(1);
+}
 @media (prefers-color-scheme: dark) {
   .vercelLogo {
     filter: invert(1);

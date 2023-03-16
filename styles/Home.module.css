@@ -5,18 +5,19 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
-  background-image: url("https://scontent.fbkk29-1.fna.fbcdn.net/v/t39.30808-6/330287325_649795320240028_6174854186057145365_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=UjfLgEO10kYAX_pASnQ&_nc_ht=scontent.fbkk29-1.fna&oh=00_AfBBAH56cwTKM0wuD-GW3bTLEC7CzIkaePXZll-j_TpbHw&oe=63FF4767");
-  background-size: cover;
+  width: 100vw;
+  color: #ffffff;
+  background-color: black;
 }
-.main::before {
-  content: "";
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  background-color: rgba(0, 0, 0, 0.55);
+@media (prefers-color-scheme: light) {
+  .main {
+    background-color: #000;
+  }
+  .vercelLogo {
+    filter: invert(1);
+  }
 }
+
 .description {
   display: inherit;
   justify-content: inherit;
@@ -65,7 +66,6 @@
   overflow: hidden;
   box-shadow: 0px 2px 8px -1px #0000001a;
   cursor: pointer;
-  background-color:white;
 }
 
 .btn span {
@@ -76,6 +76,7 @@
 .btn h2 {
   font-weight: 600;
   margin-bottom: 0.4rem;
+  color: #000;
 }
 
 .btn p {
@@ -141,7 +142,7 @@
   animation: 6s rotate linear infinite;
   width: 200%;
   height: 200%;
-  background: var(--tile-border);
+  background: rgb(255, 255, 255);
 }
 
 /* Inner Square */
@@ -149,12 +150,7 @@
   inset: 0;
   padding: 1px;
   border-radius: 48px;
-  background: linear-gradient(
-    to bottom right,
-    rgba(var(--tile-start-rgb), 1),
-    rgba(var(--tile-end-rgb), 1)
-  );
-  background-clip: content-box;
+  background: rgb(255, 255, 255);
 }
 
 /* Enable hover only on non-touch devices */
@@ -261,16 +257,21 @@
   .grid {
     grid-template-columns: repeat(2, 50%);
   }
+  @media (prefers-color-scheme: dark) {
+    .vercelLogo {
+      filter: invert(1);
+    }
+  }
 }
-
 @media (prefers-color-scheme: dark) {
   .vercelLogo {
     filter: invert(1);
   }
+}
 
-  .logo {
-    filter: drop-shadow(0 0 0.3rem #ffffff70);
-  }
+.logo {
+  color: #000;
+  filter: invert(1) drop-shadow(0 0 0.8rem #ffffff70);
 }
 
 @keyframes rotate {

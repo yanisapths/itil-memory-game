@@ -46,7 +46,7 @@ function Play() {
     script();
   }, []);
   return (
-    <main className="w-screen h-screen my-4">
+    <main className="w-screen h-screen my-4 bg-black">
       <div className=" text-base z-2 pt-2 pl-[60px] grid grid-cols-3 gap-4 content-between">
         <div>
           <Link href="/">
@@ -61,7 +61,7 @@ function Play() {
             />
           </Link>
         </div>
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5 bg-black">
           <div className="flex flex-col justify-center items-center">
             <div className="details w-full col-start-1 text-black mb-4">
               <p className="time">
@@ -91,7 +91,7 @@ function Play() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center  bg-black">
         <div className="flex gap-4 max-w-screen-lg px-8">
           {/* cards in global.css */}
           <ul className="cards justify-center items-center gap-4 mb-8">
