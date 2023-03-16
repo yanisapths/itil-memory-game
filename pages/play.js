@@ -45,8 +45,8 @@ function Play() {
     script();
   }, []);
   return (
-    <main className="w-screen h-screen my-4">
-      <div className="flex text-base z-2 pt-2 pl-[60px] gap-[10px]">
+    <main className="w-screen h-screen my-4 bg-black ">
+      <div className="flex text-base z-2 pt-2 pl-[60px] gap-[10px] ">
         <Link href="/">
           By
           <Image
@@ -59,7 +59,7 @@ function Play() {
           />
         </Link>
       </div>
-      <div className="flex  justify-center items-center  ">
+      <div className="flex  justify-center items-center bg-black ">
         <div className="flex flex-col justify-center items-center mx-10 my-5 w-screen bg-transparent rounded-lg shadow-lg shadow-[black]/40">
           <div className="flex flex-col gap-5 justify-center items-center">
             <div className="details w-full  col-start-1 text-black">
