@@ -40,9 +40,9 @@ const Play = () => {
                 with the most card when all the card have been taken.
               </h3>
             </div>
-            <div className="flex justify-center pt-6 ">
+            <div className="flex justify-center pt-6 mb-28 md:mb-0">
               <Link
-                className="bg-white text-black rounded-full  py-2 w-1/5"
+                className="bg-white text-black rounded-full py-2 md:w-1/5 w-4/5"
                 href="/play"
               >
                 <p className="text-lg font-semibold ">NEXT</p>

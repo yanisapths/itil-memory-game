@@ -73,7 +73,6 @@
   --card-border-rgb: 200, 200, 200;
 }
 
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -242,6 +241,8 @@ p {
 .card.flip .back-view {
   transform: rotateY(0);
 }
+
+
 .deck .front-view img {
   max-width: 220px;
 }
@@ -257,6 +258,17 @@ p {
 }
 .deck.flip .back-view {
   transform: rotateY(0);
+}
+
+@media (max-width: 500px) {
+  .card .back-view img {
+    width: 75px;
+    height: 80px;
+  }
+  .deck .back-view img {
+    width: 75px;
+    height: 80px;
+  }
 }
 
 .details {
