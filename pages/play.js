@@ -47,7 +47,7 @@ function Play() {
   }, []);
   return (
     <main className="w-screen h-screen my-4 bg-black">
-      <div className=" text-base z-2 pt-2 pl-[60px] grid grid-cols-3 gap-4 content-between">
+      <div className="text-base z-2 pt-2 pl-[60px] md:grid md:grid-cols-3 gap-4 content-between">
         <div>
           <Link href="/">
             By
@@ -61,7 +61,7 @@ function Play() {
             />
           </Link>
         </div>
-        <div className="flex flex-col gap-5 bg-black">
+        <div className="flex flex-col md:gap-5 bg-black py-2 mr-12 md:mr-0 md:py-0">
           <div className="flex flex-col justify-center items-center">
             <div className="details w-full col-start-1 text-black mb-4">
               <p className="time">
@@ -78,7 +78,7 @@ function Play() {
               </p>
               <button>Refresh</button>
             </div>
-            <div className="flex gap-5">
+            <div className="flex gap-5 py-1 md:py-0">
               <div className="flex gap-2">
                 <p className="rounded-full bg-[#CDCEFF] w-7 h-7"></p>
                 <span className="text-white">Question</span>
@@ -92,7 +92,7 @@ function Play() {
         </div>
       </div>
       <div className="flex justify-center items-center  bg-black">
-        <div className="flex gap-4 max-w-screen-lg px-8">
+        <div className="lg:flex gap-4 max-w-screen-lg px-8">
           {/* cards in global.css */}
           <ul className="cards justify-center items-center gap-4 mb-8">
             {q.map((item, index) => {
