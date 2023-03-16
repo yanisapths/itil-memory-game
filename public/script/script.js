@@ -44,7 +44,7 @@ export const script = () => {
   function matchCards(img1, img2) {
     if (img1 === img2) {
       matchedCard++;
-      if (matchedCard == 36 && timeLeft > 0) {
+      if (matchedCard == 16 && timeLeft > 0) {
         return clearInterval(timer);
       }
       cardOne.removeEventListener("click", flipCard);
